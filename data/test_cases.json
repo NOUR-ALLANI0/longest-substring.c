@@ -1,0 +1,10 @@
+{
+  "test_cases": [
+    {"input": "abcabcbb", "expected": 3, "description": "Cas normal de LeetCode"},
+    {"input": "bbbbb", "expected": 1, "description": "Tous caractères identiques"},
+    {"input": "pwwkew", "expected": 3, "description": "Répétition interne"},
+    {"input": "", "expected": 0, "description": "Chaîne vide"},
+    {"input": " ", "expected": 1, "description": "Espace seul"},
+    {"input": "abcdefghijklmnopqrstuvwxyz", "expected": 26, "description": "Alphabet complet"}
+  ]
+}
