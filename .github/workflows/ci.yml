@@ -1,0 +1,19 @@
+name: C CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+
+    - name: Build
+      run: gcc longest_substring.c test_longest_substring.c -o test_program
+
+    - name: Run tests
+      run: ./test_program
