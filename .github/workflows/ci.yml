@@ -1,19 +1,33 @@
-name: C CI
+name: CI Pipeline
 
 on:
   push:
+    branches: [ main ]
   pull_request:
+    branches: [ main ]
 
 jobs:
   build-and-test:
-    runs-on: ubuntu-latest
-
+    runs-on: windows-latest
+    
     steps:
-    - name: Checkout repository
+    - name: Checkout code
       uses: actions/checkout@v3
-
-    - name: Build
-      run: gcc longest_substring.c test_longest_substring.c -o test_program
-
+      
+    - name: Setup GCC
+      run: gcc --version
+      
+    - name: Compile program
+      run: |
+        gcc -o program.exe src/longest_substring.c tests/test_longest_substring.c
+        if ($LASTEXITCODE -ne 0) { exit 1 }
+        
     - name: Run tests
-      run: ./test_program
+      run: |
+        ./program.exe
+        if ($LASTEXITCODE -ne 0) { exit 1 }
+        
+    - name: Success message
+      run: |
+        echo " Tout est bon! Build réussi."
+        echo "Tests exécutés avec succès."
