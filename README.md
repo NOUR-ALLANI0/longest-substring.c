@@ -1,6 +1,7 @@
 Projet INDP1 - Longest Substring Without Repeating Characters
  Informations du projet
 
+
 Problème choisi : Longest Substring Without Repeating Characters
 Référence LeetCode : LeetCode 3 - Medium
 Équipe : Allani Nour / Azzabou Chayma / Hamdi Sarra / Laouini Rawand
@@ -187,6 +188,7 @@ Tous les tests passent.
 GitHub Actions vert.
 Documentation complète.
 Structure de projet propre.
+
 
 
 
