@@ -1,0 +1,56 @@
+# Exécutables et fichiers compilés
+*.exe
+*.out
+*.o
+*.obj
+*.so
+*.dll
+*.a
+*.lib
+
+# Fichiers temporaires et de cache
+*.tmp
+*.swp
+*~
+*.bak
+*.backup
+
+# Dossiers de build et IDE
+.vscode/
+.idea/
+*.code-workspace
+build/
+dist/
+bin/
+obj/
+Debug/
+Release/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Fichiers de logs
+*.log
+*.pid
+
+# Fichiers de test temporaires
+test_ultime.exe
+tests.exe
+program.exe
+check.exe
+ultime.exe
+
+# Données temporaires
+*.csv
+*.dat
+*.db
+# Fichiers spécifiques à ce projet
+test_main.c
+test_simple.c
+final_check.c
+test_final.exe
+test_simple.exe
+final_check.exe
+test_ultime.exe

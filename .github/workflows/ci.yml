@@ -19,7 +19,7 @@ jobs:
       
     - name: Compile program
       run: |
-        gcc -o program.exe src/longest_substring.c tests/test_longest_substring.c
+        gcc -Wall -std=c99 -o program.exe src/longest_substring.c tests/test_longest_substring.c
         if ($LASTEXITCODE -ne 0) { exit 1 }
         
     - name: Run tests
@@ -30,4 +30,4 @@ jobs:
     - name: Success message
       run: |
         echo " Tout est bon! Build réussi."
-        echo "Tests exécutés avec succès."
+        echo " Tests exécutés avec succès."
