@@ -1,37 +1,37 @@
 # Projet INDP1 - Longest Substring Without Repeating Characters
 
-## 📋 Informations du projet
-- *Problème choisi*: Longest Substring Without Repeating Characters
-- *Référence LeetCode*: [LeetCode 3 - Medium](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
-- *Équipe*: [Noms des 5-6 étudiants]
-- *Date*: 2024
-- *Langage*: C
+##  Project Information
+- *Chosen Problem*: Longest Substring Without Repeating Characters
+- *LeetCode Reference*: [LeetCode 3 - Medium](https://leetcode.com/problems/longest-substring-without-repeating-characters/)
+- *Team*: Allani Nour / Azzabou Chayma / Hamdi Sara / Laouini Rawand
+- *Date*: 2026
+- *Language*: C
 
-## 🎯 Cas réel d'utilisation
-Cette solution modélise des scénarios réels comme :
-- *Analyse de logs serveur*: Trouver la plus longue période sans événements répétés
-- *Validation de flux de données*: Détecter des séquences uniques dans des streams
-- *Sécurité informatique*: Analyser les patterns dans les mots de passe
-- *Bio-informatique*: Rechercher des séquences uniques d'ADN
+## Use Cases
+This solution models several real-world scenarios, including:
+- *Server log analysis*: Identifying the longest period without repeated events .
+- *Data stream validation*: Detecting unique sequences in data streams .
+- *Cybersecurity*: Analyzing patterns in passwords.
+- *Bioinformatics*: Searching for unique DNA sequences.
 
-## 🧠 Approche et solution
-Nous avons utilisé l'approche de *fenêtre glissante* avec un tableau de hachage simple (tableau de taille 256 pour les caractères ASCII). L'algorithme parcourt la chaîne une seule fois, d'où une complexité linéaire.
+## Approach and Solution
+We implemented a sliding window approach with a simple hash table (size 256 for ASCII characters). The algorithm traverses the string only once, ensuring linear time complexity.
 
-### Algorithme :
-1. Initialiser un tableau last_index pour stocker le dernier index de chaque caractère.
-2. Initialiser deux pointeurs start et end pour représenter la fenêtre courante.
-3. Pour chaque caractère à l'index end :
-   - Si le caractère est déjà dans la fenêtre (son dernier index est >= start), déplacer start à last_index[caractère] + 1.
-   - Mettre à jour last_index[caractère] avec end.
-   - Calculer la longueur de la fenêtre et mettre à jour la longueur maximale.
+### Algorithm :
+1.Initialize an array last_index to store the last index of each character.
+2. Initialize two pointers start and end to represent the current window.
+3. For each character at index end:
+   - If the character is already in the window (last_index[character] >= start), move start to last_index[character] + 1.
+   - Update last_index[character] with end.
+   - Calculate the window length and update the maximum length.
 
-## 📊 Complexités
-- *Temps*: O(n) - un seul parcours de la chaîne de longueur n.
-- *Espace*: O(1) - utilisation d'un tableau de taille fixe (256 entiers).
+## Complexity
+- *Time Complexity*: O(n) - single pass over a string of length n.
+- *Space Complexity*: O(1) - fixed-size array of 256 integers.
 
-## 🚀 Compilation et exécution
+## Compilation and Execution
 
-### Prérequis
+### Prerequisites:
 - GCC (MinGW sur Windows, gcc sur Linux/Mac)
 
 ### Compilation
