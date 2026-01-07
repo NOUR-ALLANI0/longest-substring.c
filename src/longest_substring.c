@@ -2,22 +2,29 @@
 #include <string.h>
 
 int lengthOfLongestSubstring(const char *s) {
-    int seen[256] = {0};   // ASCII
-    int left = 0, right = 0;
-    int maxLen = 0;
+    int last_index[256];
+    for (int i = 0; i < 256; i++) {
+        last_index[i] = -1;
+    }
+    
+    int max_len = 0;
+    int start = 0;
     int n = strlen(s);
-
-    while (right < n) {
-        if (seen[(unsigned char)s[right]] == 0) {
-            seen[(unsigned char)s[right]] = 1;
-            int currentLen = right - left + 1;
-            if (currentLen > maxLen)
-                maxLen = currentLen;
-            right++;
-        } else {
-            seen[(unsigned char)s[left]] = 0;
-            left++;
+    
+    for (int end = 0; end < n; end++) {
+        unsigned char current_char = (unsigned char)s[end];
+        
+        if (last_index[current_char] >= start) {
+            start = last_index[current_char] + 1;
+        }
+        
+        last_index[current_char] = end;
+        
+        int current_len = end - start + 1;
+        if (current_len > max_len) {
+            max_len = current_len;
         }
     }
-    return maxLen;
+    
+    return max_len;
 }
